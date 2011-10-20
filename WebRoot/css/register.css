@@ -1,0 +1,9 @@
+#registerBanner{width: 100%;}
+#registerBanner td{height: 40px; }
+#registerBanner select {
+	border: 1px solid #CCCCCC;
+	border-radius:4px;
+}
+#fileInput{border: 1px solid #ccc; border-radius:4px;}
+.btn{border: 1px solid #ccc; color:#666; border-radius:4px; padding:5px 10px;}
+.group_l{width:80px; text-align: right;}

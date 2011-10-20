@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="error" extends="struts-default" abstract="true">
+		<global-results>
+			<result name="exception">exception.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="exception" />
+		</global-exception-mappings>
+	</package>
+	<package name="xx" extends="error">
+		<interceptors>
+			<interceptor name="loginedCheck" class="com.xx.abel.interceptor.LoginedCheckInterceptor" />
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginedCheck" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="tologin">/index.jsp</result>
+			<result name="wait">/index.jsp</result>
+		</global-results>
+       <action name="users_*" class="usersAction" method="{1}">
+			<result name="quit" type="redirect">/index.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="index" type="redirect">/</result>
+			<result name="register">/user/register.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		 <action name="category_*" class="categoryAction" method="{1}">
+			<result name="js">/public/categoryList.jsp</result>
+			<result name="list">/public/categoryList.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		<action name="blog_*" class="blogAction" method="{1}">
+			<result name="list">/blog/list.jsp</result>
+			<result name="view">/blog/view.jsp</result>
+			<result name="add">/blog/add.jsp</result>
+			<result name="findById" type="redirect">/blog_findById.action?blog.id=${blog.id}</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		<action name="comment_*" class="commentAction" method="{1}">
+			<result name="list">/comment/list.jsp</result>
+			<result name="show">/comment/show.jsp</result>
+			<result name="show1">/comment/show1.jsp</result>
+			<result name="show2">/comment/show2.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+    </package>
+	
+</struts>

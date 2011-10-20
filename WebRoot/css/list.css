@@ -1,0 +1,12 @@
+#l_b{width: 680px; height:24px; padding:0 10px; overflow:hidden; line-height:24px; background:url(../images/hr/border_hr.jpg) repeat-x 0 23px; float: left; display: inline;}
+.huati{padding: 0 10px; margin:1px 0 0 0;  border-radius:4px; cursor:pointer; float: left; display: inline; }
+.hsel{border: 1px solid #c1c1c1; color:#0074B9; background:#ECF2F3; border-bottom: 0; }
+.ht_pg{width: 700px; border-bottom:1px dashed #ccc; float: left; display: inline;}
+.ht_pg div{height:28px; line-height:28px; float: left; display: inline;}
+.h_1{width: 300px;}
+.h_2{width: 120px;}
+.h_3{width: 100px;}
+.h_4{width: 80px;}
+.h_5{width: 100px; text-align: center;}
+.htone{margin: 20px 0 0 0;}
+.listMenu{margin:0 20px; display: none;}
