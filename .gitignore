@@ -1,0 +1,4 @@
+$git status
+#.gitignore example
+*.jar
+\WebRoot\WEB-INF\lib
