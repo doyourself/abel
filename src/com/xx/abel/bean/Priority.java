@@ -14,11 +14,15 @@ import javax.persistence.Table;
  * Priority entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "priority", catalog = "abel")
+@Table(name = "priority")
 public class Priority implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Users users;
 	private Integer type;

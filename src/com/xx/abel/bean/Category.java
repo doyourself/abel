@@ -17,11 +17,15 @@ import javax.persistence.Table;
  * Blogcategory entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "category", catalog = "abel")
+@Table(name = "category")
 public class Category implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Users users;
 	private String name;

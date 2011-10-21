@@ -21,11 +21,15 @@ import javax.persistence.TemporalType;
  * Newstatus entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "newstatus", catalog = "abel")
+@Table(name = "newstatus")
 public class Newstatus implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Users users;
 	private Integer isRead;

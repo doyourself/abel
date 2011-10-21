@@ -17,11 +17,15 @@ import javax.persistence.TemporalType;
  * GroupReply entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "group_reply", catalog = "abel")
+@Table(name = "group_reply")
 public class GroupReply implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private GroupTopic groupTopic;
 	private Users users;

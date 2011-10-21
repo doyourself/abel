@@ -20,11 +20,15 @@ import javax.persistence.Table;
  * Blog entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "blog", catalog = "abel")
+@Table(name = "blog")
 public class Blog implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Users users;
 	private String title;

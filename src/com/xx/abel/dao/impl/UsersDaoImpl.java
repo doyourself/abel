@@ -7,9 +7,11 @@ import com.xx.abel.bean.Users;
 import com.xx.abel.dao.intf.UsersDao;
 
 
+@SuppressWarnings("unchecked")
 @Repository
 public class UsersDaoImpl extends BaseDAOImpl implements UsersDao{
 
+	@SuppressWarnings("unchecked")
 	public Users Login(String username, String password) {
 		String hql="from Users u where u.name=? and u.password=?";
 		if(username.indexOf("@") != -1)

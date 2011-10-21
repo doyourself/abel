@@ -1,9 +1,6 @@
 package com.xx.abel.dao.impl;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.xx.abel.bean.Comment;
@@ -12,9 +9,6 @@ import com.xx.abel.dao.intf.CommentDao;
 @SuppressWarnings("unchecked")
 @Repository
 public class CommentDaoImpl extends BaseDAOImpl<Comment, Integer> implements CommentDao{
-
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
 	
 	public List<Comment> list(int leave, int sortId, int type) {
 		Object[] params={sortId,leave,type};
@@ -27,7 +21,7 @@ public class CommentDaoImpl extends BaseDAOImpl<Comment, Integer> implements Com
 	public int updateSOR(String column,int id) {
 		
 		String hql="update comment set "+column+"="+column+"+1 where id="+id;
-		jdbcTemplate.execute(hql);
+		super.getJdbcTemplate().execute(hql);
 		return 1;
 		//return this.bulkUpdate(hql, column,column,id);
 	}

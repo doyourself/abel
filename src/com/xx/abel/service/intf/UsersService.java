@@ -37,6 +37,7 @@ public interface UsersService {
 	 */
 	public Users Login(String username, String password) throws Exception;
 	
+	@SuppressWarnings("unchecked")
 	public PageListData findList(Map param, int currentPage, int pageSize);
 	
 	public boolean update(Users user)throws Exception ; 

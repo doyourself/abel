@@ -19,6 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CreateImageServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public CreateImageServlet() {
 		super();
 	}

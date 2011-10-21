@@ -73,6 +73,7 @@ public class UserServiceImpl implements UsersService{
 		Object obj = ServletActionContext.getRequest().getSession().getAttribute("user");
 		return obj == null ? null : (Users) obj;
 	}
+	@SuppressWarnings("unchecked")
 	public PageListData findList(Map param, int pageNum, int pageSize) {
 		String hql = "from User where 1=1 ";
 		for (Object o : param.keySet()) {
@@ -82,6 +83,7 @@ public class UserServiceImpl implements UsersService{
 		return userDao.findList(Users.class, hql, params, pageNum, pageSize);
 	}
 
+	@SuppressWarnings("unchecked")
 	public boolean update(Users user) {
 		try {
 			userDao.saveOrUpdate(user);
@@ -92,6 +94,7 @@ public class UserServiceImpl implements UsersService{
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public Users findById(Integer id ) {
 		return (Users) this.userDao.findById(Users.class, id);
 	}

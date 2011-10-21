@@ -17,11 +17,15 @@ import javax.persistence.TemporalType;
  * Notepad entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "notepad", catalog = "abel")
+@Table(name = "notepad")
 public class Notepad implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Users users;
 	private String title;

@@ -67,6 +67,7 @@ public interface BaseDAO<T,PK> {
 	public void proAdv( T entity ); 
 	
 	
+	@SuppressWarnings("unchecked")
 	public Object loadObject(Class clazz, Serializable id);
 	
 	/**
@@ -100,6 +101,7 @@ public interface BaseDAO<T,PK> {
 	 *            查询参数
 	 * @return 单个字符�?
 	 */
+	@SuppressWarnings("unchecked")
 	public Iterator getIteratorObjs(String hql, Object... parms);
 	
 	public List<T> getListAll(String hql, Object... parms);

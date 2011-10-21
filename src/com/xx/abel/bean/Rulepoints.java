@@ -14,11 +14,15 @@ import javax.persistence.TemporalType;
  * Rulepoints entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "rulepoints", catalog = "abel")
+@Table(name = "rulepoints")
 public class Rulepoints implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Integer type;
 	private Date createTime;

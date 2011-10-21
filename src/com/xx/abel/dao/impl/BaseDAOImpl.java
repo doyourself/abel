@@ -13,6 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.xx.abel.util.PageListData;
@@ -28,7 +29,16 @@ import com.xx.abel.dao.intf.BaseDAO;
 public class BaseDAOImpl<T, PK extends Serializable> extends
 		HibernateDaoSupport  implements BaseDAO<T, PK> {
 	Logger logger =Logger.getLogger(BaseDAOImpl.class);
-
+	
+	private JdbcTemplate jdbcTemplate;
+	
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+	@Autowired
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
 	@Autowired(required = true)
 	@Resource(name = "sessionFactory")
 	public void setSuperSessionFactory(SessionFactory sessionFactory) {
@@ -68,6 +78,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public T findById(Class<T> entityClass, PK id) {
 		try {
 			return (T) getHibernateTemplate().load(entityClass, id);
@@ -76,6 +87,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<T> findAll(Class<T> entityClass) {
 		try {
 			return getHibernateTemplate().loadAll(entityClass);
@@ -84,6 +96,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<T> findByProperty(Class<T> entityClass, String propertyName,
 			Object value, int type) {
 		String queryString = "";
@@ -101,6 +114,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public PageListData findList(Class<T> entityClass, String hql,
 			Object[] params, int currentPage, int pageSize) {
 		PageListData listdata = null;
@@ -165,6 +179,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 
 
 
+	@SuppressWarnings("unchecked")
 	public Object getFirstResult(String hsql, Object... parms) {
 
 		Iterator it = getIteratorObjs(hsql, parms);
@@ -175,11 +190,13 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	public Iterator getIteratorObjs(String hql, Object... parms) {
 		Iterator it = getHibernateTemplate().iterate(hql, parms);
 		return it;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List getJdbcList(String sql, Object... params) {
 		Query query = getSession().createSQLQuery(sql);		 
 		if (params != null) {
@@ -191,6 +208,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		return query.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List getListAll(String hql, Object... parms) {
 		return (List) getHibernateTemplate().find(hql, parms);
 	}
@@ -211,12 +229,9 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		return totalRecords;
 	}
 
+	@SuppressWarnings("unchecked")
 	public Object loadObject(Class clazz, Serializable id) {
 		return getHibernateTemplate().get(clazz, id);
 	}
-
-	
-
-	
 
 }

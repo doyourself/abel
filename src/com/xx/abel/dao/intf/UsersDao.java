@@ -3,6 +3,7 @@ package com.xx.abel.dao.intf;
 import com.xx.abel.bean.Users;
 
 
+@SuppressWarnings("unchecked")
 public interface UsersDao extends BaseDAO{
 	/**
 	 * 登录的方�?

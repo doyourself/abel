@@ -8,6 +8,7 @@ import com.xx.abel.service.intf.TagService;
 @Controller
 public class TagAction {
 	
+	@SuppressWarnings("unused")
 	@Autowired
 	private TagService tagService;
 

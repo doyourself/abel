@@ -14,11 +14,15 @@ import javax.persistence.Table;
  * News entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "news", catalog = "abel")
+@Table(name = "news")
 public class News implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Bug bug;
 	private Integer bugid;

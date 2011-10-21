@@ -15,11 +15,15 @@ import javax.persistence.Table;
  * Blogreprint entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "blogreprint", catalog = "abel")
+@Table(name = "blogreprint")
 public class Blogreprint implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Blog blog;
 	private Users users;

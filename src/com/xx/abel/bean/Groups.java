@@ -20,11 +20,15 @@ import javax.persistence.TemporalType;
  * Groups entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "groups", catalog = "abel")
+@Table(name = "groups")
 public class Groups implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String name;
 	private String avatar;

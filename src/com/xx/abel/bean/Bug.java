@@ -16,11 +16,15 @@ import javax.persistence.TemporalType;
  * Bug entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "bug", catalog = "abel")
+@Table(name = "bug")
 public class Bug implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Integer title;
 	private String description;

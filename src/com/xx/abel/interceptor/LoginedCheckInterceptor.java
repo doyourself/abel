@@ -10,6 +10,10 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 import com.xx.abel.bean.Users;
 
 public class LoginedCheckInterceptor extends AbstractInterceptor {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Logger logger = Logger.getLogger(LoginedCheckInterceptor.class);
 	public String intercept(ActionInvocation ai) throws Exception {
 //

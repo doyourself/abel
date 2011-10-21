@@ -102,17 +102,17 @@ public class UsersAction extends BaseAction {
 					this.addActionError("上传的图片格式不正确！");
 					return "register";
 				}
-				int width = 0;
-				int height = 0;
-				try {
-					String un = upload.getPath();
-					Map m = Tools.getPicWidthHeight(un);
-					Object[] len = m.values().toArray();
-					width = Integer.parseInt(len[0] + "");
-					height = Integer.parseInt(len[1] + "");
-				} catch (Exception e) {
-
-				}
+//				int width = 0;
+//				int height = 0;
+//				try {
+//					String un = upload.getPath();
+//					Map m = Tools.getPicWidthHeight(un);
+//					Object[] len = m.values().toArray();
+//					width = Integer.parseInt(len[0] + "");
+//					height = Integer.parseInt(len[1] + "");
+//				} catch (Exception e) {
+//
+//				}
 //				if (upload.length() > 1048576) {
 //					this.addActionError("上传的图片过大最大应为1MB！");
 //					return "register";

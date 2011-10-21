@@ -2,8 +2,6 @@ package com.xx.abel.dao.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.stereotype.Repository;
 
 import com.xx.abel.bean.Tag;

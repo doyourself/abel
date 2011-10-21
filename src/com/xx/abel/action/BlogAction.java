@@ -2,7 +2,6 @@ package com.xx.abel.action;
 
 import java.util.List;
 
-import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
