@@ -56,6 +56,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 	public void saveOrUpdate(T entity) {
 		try {
 			getHibernateTemplate().merge(entity);
+			this.getHibernateTemplate().flush();
 		} catch (Exception re) {
 			System.out.println(re.getMessage());
 		}
@@ -64,6 +65,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 	public void delete(T entity) {
 		try {
 			getHibernateTemplate().delete(entity);
+			this.getHibernateTemplate().flush();
 		} catch (RuntimeException re) {
 			throw re;
 		}

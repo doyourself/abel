@@ -58,7 +58,7 @@
 	</tr>
 	<tr>
 		<td class="group_l" align="right">标签：</td>
-		<td><input type="text" class="input" name="tag" /></td>
+		<td><input type="text" class="input" name="tag" value="<s:property value="tag"/>" /></td>
 	</tr>
 	<tr>
 		<td class="group_l" align="right" style="vertical-align: top">分类：</td>
@@ -67,7 +67,7 @@
 			<select name="blog.category.id" id="category_name">
 				<option>请选择</option>
 				<s:iterator value="categoryList" id="sb">
-					<option value="<s:property value="id"/>"><s:property value="name"/></option>
+					<option value="<s:property value="id"/>"<s:if test="blog.category.id == #sb.id"> selected="selected"</s:if> ><s:property value="name"/></option>
 				</s:iterator>
 			</select>
 			<a id="addcategory">添加分类</a>
@@ -82,15 +82,15 @@
 	<tr>
 		<td class="group_l">是否允许评论：</td>
 		<td>
-			<input type="radio" checked="checked" name="blog.isAllowedComment" value="1"/>是
-			<input type="radio" name="blog.isAllowedComment" value="0" />否
+			<input type="radio"  <s:if test="blog.isAllowedComment==null">checked="checked"</s:if> <s:if test="blog.isAllowedComment==1">checked="checked"</s:if> name="blog.isAllowedComment" value="1"/>是
+			<input type="radio" <s:if test="blog.isAllowedComment==0">checked="checked"</s:if>  name="blog.isAllowedComment" value="0" />否
 		</td>
 	</tr>
 	<tr>
 		<td class="group_l">是否允许转载：</td>
 		<td>
-			<input type="radio" checked="checked" name="blog.isReprinted" value="1"/>是
-			<input type="radio" name="blog.isReprinted" value="0" />否
+			<input type="radio" <s:if test="blog.isReprinted==null">checked="checked"</s:if> <s:if test="blog.isReprinted==1">checked="checked"</s:if> name="blog.isReprinted" value="1"/>是
+			<input type="radio" <s:if test="blog.isReprinted==0">checked="checked"</s:if> name="blog.isReprinted" value="0" />否
 		</td>
 	</tr>
 	

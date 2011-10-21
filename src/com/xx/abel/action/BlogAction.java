@@ -1,10 +1,8 @@
 package com.xx.abel.action;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
 import com.xx.abel.bean.Blog;
 import com.xx.abel.bean.Category;
 import com.xx.abel.bean.Tag;
@@ -39,9 +37,17 @@ public class BlogAction extends BaseAction {
 	}
 
 	public String saveOrUpdate() {
-		blogService.save(blog);
 		if (tag != null) {
 			String tagval[] = tag.split(" ");
+			System.out.println(blog.getId());
+			if(blog.getId() == null)
+				blogService.save(blog);
+			else{
+				if (tagval.length > 0 && blog != null && blog.getId() != null) {
+					tagService.delete(blog.getId(), 1);
+				}
+				blogService.saveOrUpdate(blog);
+			}
 			for (int i = 0; i < tagval.length; i++) {
 				Tag tag = new Tag();
 				tag.setResourcesId(blog.getId());
@@ -57,6 +63,16 @@ public class BlogAction extends BaseAction {
 		if (blog != null && blog.getId() != null) {
 			blog = blogService.findById(blog.getId());
 			listTag = tagService.list(blog.getId(), 1);
+			List<Tag> list = this.tagService.list(blog.getId(), 1);
+			StringBuffer sb = new StringBuffer();
+			for (Tag t : list) {
+				sb.append(t.getDescription() + " ");
+			}
+			Integer tagsize = list.size();
+			if (tagsize != null && tagsize > 0) {
+				sb.substring(0, sb.length() - 1);
+			}
+			this.setTag(sb + "");
 		}
 		return "view";
 	}

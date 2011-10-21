@@ -26,7 +26,11 @@
 				<span class="clatl">
 					<a href="<%=basePath %>blog_findById.action?blog.id=<s:property value="id"/>"><s:property value="title"/></a>
 					<font>(<s:property value="category.name"/>)</font>
-					<span class="listMenu"><a href="<%=basePath %>blog_add.action?blog.id=<s:property value="id"/>">修改</a> | <a href="">删除</a></span>
+					<span class="listMenu">
+					<s:if test="users.id == #session.user.id">
+					<a href="<%=basePath %>blog_add.action?blog.id=<s:property value="id"/>">修改</a> | <a href="">删除</a>
+					</s:if>
+					</span>
 				</span>
 				<span class="clatr">
 					<s:date name="createTime" format="yyyy-MM-dd HH:mm:ss"/>

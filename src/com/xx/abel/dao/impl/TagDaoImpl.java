@@ -15,4 +15,8 @@ public class TagDaoImpl extends BaseDAOImpl<Tag, Integer> implements TagDao{
 		return getListAll("from Tag where users.id=? and type=? and resourcesId=?",uid, type,resourceId);
 	}
 
+	public void delete(int resourceId, int type) {
+		super.bulkUpdate("delete from Tag where type=? and resourcesId=?",type,resourceId);
+	}
+
 }

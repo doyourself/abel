@@ -22,7 +22,6 @@
 		</interceptors>
 		<global-results>
 			<result name="tologin">/index.jsp</result>
-			<result name="wait">/index.jsp</result>
 		</global-results>
        <action name="users_*" class="usersAction" method="{1}">
 			<result name="quit" type="redirect">/index.jsp</result>

@@ -9,5 +9,7 @@ public interface TagService {
 	public void saveOrUpdate(Tag tag);
 	
 	public List<Tag> list(int resourceId,int type);
+	
+	public void delete(int resourceId,int type);
 
 }

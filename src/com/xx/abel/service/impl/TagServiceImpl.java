@@ -22,5 +22,8 @@ public class TagServiceImpl implements TagService{
 	public List<Tag> list(int resourceId,int type) {
 		return tagDao.list(resourceId, UserServiceImpl.getUser().getId(), type);
 	}
+	public void delete(int resourceId, int type) {
+		tagDao.delete(resourceId, type);
+	}
 
 }
