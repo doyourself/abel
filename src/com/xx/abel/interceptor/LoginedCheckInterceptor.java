@@ -16,7 +16,7 @@ public class LoginedCheckInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;
 	Logger logger = Logger.getLogger(LoginedCheckInterceptor.class);
 	public String intercept(ActionInvocation ai) throws Exception {
-//
+		String href = ServletActionContext.getRequest().getHeader("Referer");
 		String url = ServletActionContext.getRequest().getRequestURL()
 				.toString();
 		logger.debug(" URL intercept start===URL：" + url);
@@ -28,6 +28,7 @@ public class LoginedCheckInterceptor extends AbstractInterceptor {
 		Users user = null;
 
 		if (url.indexOf("users_login.action") != -1 || url.indexOf("logout.action") != -1 || url.indexOf("users_nameOremail.action") != -1 || url.indexOf("users_save.action") != -1) {
+			ServletActionContext.getRequest().getSession().setAttribute("from", href);
 			return ai.invoke();
 		}else {
 			if (!ServletActionContext.getRequest().isRequestedSessionIdValid()) {

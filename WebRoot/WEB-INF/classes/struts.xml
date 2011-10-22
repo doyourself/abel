@@ -28,17 +28,21 @@
 			<result name="login">/index.jsp</result>
 			<result name="index" type="redirect">/</result>
 			<result name="register">/user/register.jsp</result>
+			<result name="from" type="redirect">${from}</result>
 			<interceptor-ref name="mystack" />
 		</action>
 		 <action name="category_*" class="categoryAction" method="{1}">
 			<result name="js">/public/categoryList.jsp</result>
 			<result name="list">/public/categoryList.jsp</result>
+			<result name="colorboxlist">/category/List.jsp</result>
 			<interceptor-ref name="mystack" />
 		</action>
 		<action name="blog_*" class="blogAction" method="{1}">
 			<result name="list">/blog/list.jsp</result>
 			<result name="view">/blog/view.jsp</result>
 			<result name="add">/blog/add.jsp</result>
+			<result name="edit">/blog/edit.jsp</result>
+			<result name="delete" type="redirect">/blog_list.action</result>
 			<result name="findById" type="redirect">/blog_findById.action?blog.id=${blog.id}</result>
 			<interceptor-ref name="mystack" />
 		</action>

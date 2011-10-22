@@ -24,11 +24,19 @@ public class BlogAction extends BaseAction {
 	private TagService tagService;
 
 	public String add() {
+		blog=null;
+		Users user = UserServiceImpl.getUser();
+		categoryList = categoryService.list(user.getId(), 1);
+		return "add";
+	}
+
+	public String edit() {
 		Users user = UserServiceImpl.getUser();
 		if (blog != null && blog.getId() != null)
 			blog = blogService.findById(blog.getId());
 		categoryList = categoryService.list(user.getId(), 1);
-		return "add";
+		this.setTag(tagService.findUserTag(blog.getId(), 1));
+		return "edit";
 	}
 
 	public String list() {
@@ -40,9 +48,9 @@ public class BlogAction extends BaseAction {
 		if (tag != null) {
 			String tagval[] = tag.split(" ");
 			System.out.println(blog.getId());
-			if(blog.getId() == null)
+			if (blog.getId() == null)
 				blogService.save(blog);
-			else{
+			else {
 				if (tagval.length > 0 && blog != null && blog.getId() != null) {
 					tagService.delete(blog.getId(), 1);
 				}
@@ -75,6 +83,11 @@ public class BlogAction extends BaseAction {
 			this.setTag(sb + "");
 		}
 		return "view";
+	}
+
+	public void delete() {
+		if (blog != null && blog.getId() != null)
+			blogService.delete(blog.getId());
 	}
 
 	private Blog blog;

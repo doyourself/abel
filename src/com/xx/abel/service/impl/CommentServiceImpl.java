@@ -86,4 +86,14 @@ public class CommentServiceImpl implements CommentService {
 		return this.commentDao.updateSOR(column, id) > 0 ? true : false;
 	}
 
+	public List<Comment> list(int leave, int sortId) {
+		String hql = "from Comment where sortId=? and level=? order by createTime desc";
+		Object[] params = { sortId, leave};
+		return commentDao.getListAll(hql, params);
+	}
+
+	public void jdbcdelete(String Id,int type) {
+		commentDao.jdbcdelete(Id, type);
+	}
+
 }

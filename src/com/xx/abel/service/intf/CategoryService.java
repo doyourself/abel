@@ -10,4 +10,6 @@ public interface CategoryService {
 
 	public List<Category> list(int uid, int type);
 	
+	public void delete(int id);
+	
 }

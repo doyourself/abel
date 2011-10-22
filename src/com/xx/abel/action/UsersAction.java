@@ -158,7 +158,7 @@ public class UsersAction extends BaseAction {
 			}
 			user.setPassword(MD5.MD5Encode(user.getPassword()));
 			boolean bool = userService.save(user);
-			if (bool) {
+			if (bool) {	
 				user.setPassword(this.getPassword2());
 				Users u = userService.Login(user.getName(), user.getPassword());
 				if(u == null){
@@ -189,6 +189,7 @@ public class UsersAction extends BaseAction {
 	 * @return
 	 */
 	public String login() throws Exception {
+		Object obj = ServletActionContext.getRequest().getSession().getAttribute("from");
 		ServletActionContext.getRequest().getSession().setAttribute("serverIp", ServletActionContext.getRequest()
 				.getLocalAddr());
 		try {
@@ -204,7 +205,13 @@ public class UsersAction extends BaseAction {
 			e.printStackTrace();
 			logger.error("登录错误" + new Date());
 		}
+		if(obj==null)
 		return "index";
+		else{
+			ServletActionContext.getRequest().getSession().removeAttribute("from");
+			this.setFrom((String)obj);
+			return "from";
+		}
 	}
 
 	public String query() throws Exception {
@@ -245,6 +252,15 @@ public class UsersAction extends BaseAction {
 
 	public void setPassword2(String password2) {
 		this.password2 = password2;
+	}
+	private String from;
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
 	}
 
 }

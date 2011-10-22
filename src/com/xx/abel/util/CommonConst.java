@@ -11,6 +11,7 @@ public class CommonConst {
 	
 	public static IdentityHashMap<String, String> IMEI = new IdentityHashMap<String, String>() ;
 	
+	@SuppressWarnings("unchecked")
 	public static  HashSet<String> IMEI_AlGOR = new HashSet();
 	
 }

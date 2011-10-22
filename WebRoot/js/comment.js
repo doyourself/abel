@@ -11,8 +11,9 @@ $(function(){
 			$.post("/Abel/comment_addComment.action",{"comment.description":val,"comment.status":0,"comment.sortId":id,"comment.type":1,"comment.level":0},function(data){
 				$(".comment_list_b:eq(0)").before(data);
 			});
+			$("#tcommr_text").attr("value","");
 		}else{
-			alert(val);
+			alert("请输入评论内容！");
 		}
 	});
 	$(".shfId").live("click",function(e){
@@ -97,5 +98,23 @@ $(function(){
 		e.preventDefault();
 		alert("您已经发表过看法！");
 	});
+	$(".del").click(function(e){
+		e.preventDefault();
+		var type = $("#type").val();
+		var id = $(this).attr("id");
+		if(type!=1&&id!=""){
+			alert("非法操作！");
+		}else{
+			if(confirm("确认要删除吗?删除后数据讲无法恢复")){
+				$.post("/Abel/blog_delete.action",{"blog.id":id},function(){});
+				$("#list_"+id).remove();
+				var leng = $(".ht_pg").length;
+				if(leng==0){
+					location.reload();
+				}
+			}
+		}
+	});
+		
 });
 

@@ -45,7 +45,17 @@ a:hover{
 	color:#FF99CC;
 	text-decoration:underline;
 }
-
+#left a, a:visited {
+	color:#0074B9;
+	text-decoration:none;
+	outline:none;
+	font-size:13px;
+}
+#left a:hover{
+	background:#FF99CC;
+	color:#fff;
+	text-decoration:underline;
+}
 #left{width:700px; float:left; display:inline;}
 #right{width:280px; float:right; display:inline;}
 #center{width:1000px; margin: 0 auto;}
@@ -101,5 +111,5 @@ a:hover{
 .CB{color: #333;}
  .cla_title{width: 680px; margin:0 0 0 20px; color:#336699; font-weight:bold; float: left; display: inline;}
  .cla_content{width: 680px; margin:0 0 0 20px; float: left; display: inline;}
- .clatl{ float: left; display: inline;}
+ .clatl{border-radius: 4px; float: left; display: inline;}
  .clatr{font-weight:100; font-size:12px; float: right; display: inline;}

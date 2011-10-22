@@ -27,17 +27,23 @@ public class CategoryAction extends BaseAction {
 			return "list";
 		}
 	}
+	public void update(){
+		
+		this.categoryService.saveOrUpdate(category);
+	}
 
 	public String list() {
 		Users user = UserServiceImpl.getUser();
 		if (user == null)
 			return "toLogin";
 		this.list = categoryService.list(user.getId(), type);
-		return "list";
+		return "colorboxlist";
 	}
-
+	public void delete(){
+		if(category!=null&&category.getId()!=null)
+			categoryService.delete(category.getId());
+	}
 	private Category category;
-	
 	private List<Category> list;
 
 	private int type;

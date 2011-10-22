@@ -37,7 +37,7 @@ $(function(){
 	<s:else>
 	<s:property value="#session.user.name"/>&nbsp;<a href="#" title="你当前的积分<s:property value="#session.user.points"/>分" style="color: red;">[<s:property value="#session.user.points"/>]</a>
 	<a href="">[设置]</a>&nbsp;
-	<a href="">[退出]</a>
+	<a href="<%=basePath%>/users_quit.action">[退出]</a>
 	</s:else>　
 	</td>
 </tr>

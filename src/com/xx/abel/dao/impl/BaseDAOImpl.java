@@ -233,6 +233,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 
 	@SuppressWarnings("unchecked")
 	public Object loadObject(Class clazz, Serializable id) {
+		this.getHibernateTemplate().clear();
 		return getHibernateTemplate().get(clazz, id);
 	}
 

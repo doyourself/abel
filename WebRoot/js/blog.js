@@ -21,7 +21,47 @@ $(function(){
 		}else{
 			alert(val);
 		}
-		
+	});
+	$("#blog_sub").click(function(e){
+		e.preventDefault();
+		var Title = $.trim($("#Title").val());
+		var Tag = $.trim($("#Tag").val());
+		var category_name = $.trim($("#category_name").val());
+		if(Title ==""){
+			alert("标题不能为空！");
+		}else if(Tag == ""){
+			alert("标签不能为空！");
+		}else if(category_name == 0){
+			alert("请选择分类！");
+		}else{
+			$("#categoryForm").submit();
+		}
+	});
+	$("#editCategory").click(function(e){
+		e.preventDefault();
+		var type = $("#type").val();
+		$.fn.colorbox({href:"/Abel/category_list.action?type="+type});
+	});
+	$(".editUpdate").live("click",function(e){
+		e.preventDefault();
+		var id = $(this).attr("href");
+		var val = $.trim($("#text_"+id).val());
+		if(val == ""){
+			alert("请输入分类名称！");
+		}else{
+			$.post("/Abel/category_update.action",{"category.id":id,"category.name":val,"category.type":1},function(){})
+			alert("分类修改成功！");
+			location.reload();
+		}
+	});
+	$(".delCategory").live("click",function(e){
+		e.preventDefault();
+		var id = $(this).attr("href");
+		if(id == ""){
+			alert("非法操作！");
+		}else{
+			$.post("/Abel/category_delete.action",{"category.id":id},function(){})
+		}
 	});
 });
 

@@ -11,5 +11,7 @@ public interface TagService {
 	public List<Tag> list(int resourceId,int type);
 	
 	public void delete(int resourceId,int type);
+	
+	public String findUserTag(int resourceId,int type);
 
 }

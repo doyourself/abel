@@ -26,4 +26,8 @@ public class CategoryServiceImpl implements CategoryService{
 		return categoryDao.list(uid, type);
 	}
 
+	public void delete(int id) {
+		categoryDao.deleteById(Category.class, id);
+	}
+
 }

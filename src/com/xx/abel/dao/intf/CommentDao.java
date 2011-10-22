@@ -12,4 +12,11 @@ public interface CommentDao extends BaseDAO<Comment, Integer>{
 
 	public int updateSOR(String column,int id);
 	
+	/**
+	 * 
+	 * @param id 删除的sortId 或者 parentId
+	 * @param type 1是删除总的评论 2、是总的子评论
+	 */
+	public void jdbcdelete(String id , int type);
+	
 }

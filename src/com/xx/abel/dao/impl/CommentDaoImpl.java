@@ -19,10 +19,20 @@ public class CommentDaoImpl extends BaseDAOImpl<Comment, Integer> implements Com
 		return getListAll("from Comment where status=0 and parentId=? and type=?", params);
 	}
 	public int updateSOR(String column,int id) {
-		
 		String hql="update comment set "+column+"="+column+"+1 where id="+id;
 		super.getJdbcTemplate().execute(hql);
 		return 1;
 		//return this.bulkUpdate(hql, column,column,id);
+	}
+	public void jdbcdelete(String id, int type) {
+		super.getHibernateTemplate().clear();
+		if(type==1){
+			String sql="delete from comment where sortId ="+id+" and level=0 and type=1";
+			super.getJdbcTemplate().execute(sql);
+		}
+		else{
+			String sql="delete from comment where parentId in ("+id+") and type=1";
+			super.getJdbcTemplate().execute(sql);
+		}
 	}
 }

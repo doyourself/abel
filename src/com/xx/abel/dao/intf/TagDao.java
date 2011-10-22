@@ -9,4 +9,6 @@ public interface TagDao extends BaseDAO<Tag, Integer>{
 	public List<Tag> list(int resourceId,int uid,int type);
 	
 	public void delete(int resourceId,int type);
+	
+	public List<Tag> findUserTag(int resourceId,int type);
 }

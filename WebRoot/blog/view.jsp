@@ -23,7 +23,7 @@
 <s:include value="/inc/top.jsp"></s:include>
 <div id="center">
 <div id="left">
-<h1>c查看博文</h1>
+<h1>查看博文</h1>
 <div class="title">
 			<s:property value="blog.title"/>
 		</div>
@@ -32,7 +32,7 @@
 			<s:iterator value="listTag" id="lt">
 			 <a href=""><s:property value="description"/></a>
 			 </s:iterator>
-			 &nbsp;&nbsp;发表于2011年2月12日
+			 &nbsp;&nbsp;发表于
 			 <s:date name="blog.createTime" format="yyyy年MM月dd日 HH时mm分"/>
 		</div>
 		<div id="tv_pg"><s:property value="blog.content" escape="false"/></div>
