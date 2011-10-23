@@ -1,6 +1,5 @@
 package com.xx.abel.service.impl;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
@@ -19,12 +18,12 @@ public class BugServiceImpl implements BugService {
 	@Autowired
 	private BugDao bugDao;
 
+	@SuppressWarnings("static-access")
 	public List<Bug> findAll() {
 		Users user = UserServiceImpl.getUser();
 		List<Bug> list = bugDao.findByProperty(Bug.class, "users.id", user
 				.getId(), 1);
 		List<Bug> l = new LinkedList<Bug>();
-		SimpleDateFormat smf = new SimpleDateFormat("yyyy-MM-dd");
 		for (Bug bug : list) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(bug.getCreateTime());

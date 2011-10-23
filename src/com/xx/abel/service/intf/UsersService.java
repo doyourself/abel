@@ -43,4 +43,9 @@ public interface UsersService {
 	public boolean update(Users user)throws Exception ; 
 	
 	public Users findById(Integer id );
+	/**
+	 * 给用户加分
+	 * @param points 加多少分
+	 */
+	public void updatePoints(int points);
 }

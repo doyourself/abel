@@ -20,4 +20,5 @@ public class UsersDaoImpl extends BaseDAOImpl implements UsersDao{
 		return (list == null || list.size() != 1) ? null : (Users)list.get(0);
 	}
 
+
 }

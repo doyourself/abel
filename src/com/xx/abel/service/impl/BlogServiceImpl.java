@@ -2,16 +2,11 @@ package com.xx.abel.service.impl;
 
 import java.util.Date;
 import java.util.List;
-
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.xx.abel.bean.Blog;
 import com.xx.abel.bean.Comment;
 import com.xx.abel.dao.intf.BlogDao;
-import com.xx.abel.dao.intf.CommentDao;
 import com.xx.abel.service.intf.BlogService;
 import com.xx.abel.service.intf.CommentService;
 import com.xx.abel.service.intf.TagService;

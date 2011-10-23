@@ -99,4 +99,15 @@ public class UserServiceImpl implements UsersService{
 		return (Users) this.userDao.findById(Users.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
+	public void updatePoints(int points) {
+		Users user = UserServiceImpl.getUser();
+		if(points != 0){
+			int point = user.getPoints()+points;
+			user.setPoints(point);
+			this.userDao.saveOrUpdate(user);
+			ServletActionContext.getRequest().getSession().setAttribute("user", user);
+		}
+	}
+
 }
