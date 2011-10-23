@@ -61,10 +61,10 @@
 		}
 	.menu{width:149px; height:45px; cursor:pointer; text-align:center; line-height:45px; float: left; display: inline;}
 	.menu a{width:149px; height:45px; text-decoration:none; color:#CCCCCC; font-weight:bold; float: left; display: inline;}
-	.menu a:hover{background: url(../images/hr/templatemo_menu_hover.jpg) no-repeat; float: left; display: inline;}
-	#index{background: url(../images/hr/templatemo_menu_hover.jpg) no-repeat;}
+	.menu a:hover{background: url(<%=basePath%>/images/hr/templatemo_menu_hover.jpg) no-repeat; float: left; display: inline;}
+	#index{background: url(<%=basePath%>/images/hr/templatemo_menu_hover.jpg) no-repeat;}
 </style>
-<script >
+<script>
 $(function(){
 	$("#addBug").click(function(e){
 		e.preventDefault();
@@ -75,11 +75,20 @@ $(function(){
 		var varHref = $(this).attr("href");
 		$.fn.colorbox({href:varHref});	
 	});
+	$(".ui-widget-content").click(function(){
+		var cla = $(this).attr("class");
+		var fcom = cla.indexOf("fc-other-month");
+		if(fcom == -1){
+			var fcdn = $(this).find(".fc-day-number").html();
+			var time = $(".fc-header-title h2").html();
+			var time = time+" "+fcdn;
+		}
+	});
 });
 </script>
 </head>
 <body style="margin:0; padding:0; background: #ccc;">
-<div id="top" style="width:100%; height:47px; padding-bottom:10px; text-align:center; background: url(../images/hr/templatemo_menu.jpg) repeat-x;">
+<div id="top" style="width:100%; height:47px; padding-bottom:10px; text-align:center; background: url(<%=basePath%>/images/hr/templatemo_menu.jpg) repeat-x;">
 <div style="900px; height:47px; margin: 0 auto;">
 	<div style="margin:0 0 0 250px; float: left; display: inline;">
 		<span class="menu" id="index"><a href="<%=basePath %>">首页</a></span>

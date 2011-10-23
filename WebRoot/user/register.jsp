@@ -59,7 +59,7 @@
 								密码：
 							</td>
 							<td>
-								<input type="text" id="password" class="input" value="<s:property value='user.password'/>" name="user.password"/>
+								<input type="password" id="password" class="input" value="<s:property value='user.password'/>" name="user.password"/>
 							</td>
 							<td>
 								<span id="passwordspan"></span>
@@ -70,7 +70,7 @@
 								确认密码：
 							</td>
 							<td>
-								<input type="text" id="password2" class="input" name="password2"  value="<s:property value='password2'/>"/>
+								<input type="password" id="password2" class="input" name="password2"  value="<s:property value='password2'/>"/>
 							</td>
 							<td><span id="password2span"></span></td>
 						</tr>

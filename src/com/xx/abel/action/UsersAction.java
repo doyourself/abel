@@ -157,6 +157,7 @@ public class UsersAction extends BaseAction {
 				return "register";
 			}
 			user.setPassword(MD5.MD5Encode(user.getPassword()));
+			user.setPoints(0);
 			boolean bool = userService.save(user);
 			if (bool) {	
 				user.setPassword(this.getPassword2());
