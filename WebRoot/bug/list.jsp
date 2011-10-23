@@ -91,11 +91,11 @@ $(function(){
 <div id="top" style="width:100%; height:47px; padding-bottom:10px; text-align:center; background: url(<%=basePath%>/images/hr/templatemo_menu.jpg) repeat-x;">
 <div style="900px; height:47px; margin: 0 auto;">
 	<div style="margin:0 0 0 250px; float: left; display: inline;">
-		<span class="menu" id="index"><a href="<%=basePath %>">首页</a></span>
+		<span class="menu"><a href="<%=basePath %>">首页</a></span>
 		<span class="menu"><a href="<%=basePath %>blog_list.action">博文</a></span>
 		<span class="menu"><a href="">小组</a></span>
 		<span class="menu"><a href="">问答</a></span>
-		<span class="menu"><a href="">BUG</a></span>
+		<span class="menu" id="index"><a href="">BUG</a></span>
 	</div>
 </div>
 </div>
