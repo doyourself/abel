@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  * Newstatus entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "newstatus")
+@Table(name = "newstatus", catalog = "abel2")
 public class Newstatus implements java.io.Serializable {
 
 	// Fields

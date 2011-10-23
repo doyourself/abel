@@ -25,7 +25,7 @@
 <s:include value="/inc/top.jsp"></s:include>
 <div id="center">
 <div id="left">
-<h1>发表博文</h1>
+<h1>修改博文</h1>
 <form action="<%=basePath %>blog_saveOrUpdate.action" method="post" id="categoryForm">
 <table id="addBlog" cellpadding="0" cellspacing="0" style="width: 100%;">
 	<tr>
@@ -70,7 +70,8 @@
 					<option value="<s:property value="id"/>"<s:if test="blog.category.id == #sb.id"> selected="selected"</s:if> ><s:property value="name"/></option>
 				</s:iterator>
 			</select>
-			<a id="addcategory">添加分类</a>
+			<a id="addcategory" href="">添加分类</a>
+			<a id="editCategory" href="">修改分类</a>
 			</div>
 			<div id="addcateb" style="float:left; display:none;">
 				&nbsp;&nbsp;<input type="text" class="input2" maxlength="13" name="checkName" onmouseout="if(value=='请输入分类名称'){this.style.color='#BDBDBD'}" onmouseover="this.style.color='#333'" id="category_value" value="请输入分类名称" onfocus="if(value=='请输入分类名称'){value=''}" onblur="if(value==''){value='请输入分类名称'}" style="color: rgb(189, 189, 189);" />

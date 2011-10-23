@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  * Users entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "users")
+@Table(name = "users", catalog = "abel2")
 public class Users implements java.io.Serializable {
 
 	// Fields
@@ -64,7 +64,7 @@ public class Users implements java.io.Serializable {
 	private Set<Blog> blogs = new HashSet<Blog>(0);
 	private Set<Category> blogcategories = new HashSet<Category>(0);
 	private Set<Blogreprint> blogreprints = new HashSet<Blogreprint>(0);
-
+	private Set<Bug> bugs = new HashSet<Bug>(0);
 	// Constructors
 
 	/** default constructor */
@@ -441,5 +441,13 @@ public class Users implements java.io.Serializable {
 
 	public void setBlogreprints(Set<Blogreprint> blogreprints) {
 		this.blogreprints = blogreprints;
+	}
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "users")
+	public Set<Bug> getBugs() {
+		return this.bugs;
+	}
+
+	public void setBugs(Set<Bug> bugs) {
+		this.bugs = bugs;
 	}
 }

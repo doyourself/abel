@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Publiccomment entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "publiccomment")
+@Table(name = "publiccomment", catalog = "abel2")
 public class Publiccomment implements java.io.Serializable {
 
 	// Fields
@@ -82,7 +82,7 @@ public class Publiccomment implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "description", nullable = false, length = 65535)
+	@Column(name = "description", nullable = false, length = 10535)
 	public String getDescription() {
 		return this.description;
 	}

@@ -63,5 +63,6 @@
 	<s:include value="/inc/right.jsp"></s:include>
 </div>
 <div id="i_b_b"></div>
+<script type="text/javascript" src="http://v2.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r1.gif" charset="utf-8"></script>
 </body>
 </html>

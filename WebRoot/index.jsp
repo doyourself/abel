@@ -33,7 +33,7 @@
 				<div id="sendType">
 					
 				</div>
-				<button>发 布</button>
+				<button class="btn7">发 布</button>
 			</div>
 		</div>
 		<div id="ilb_pg">

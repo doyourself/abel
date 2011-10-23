@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * Comment entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "comment")
+@Table(name = "comment", catalog = "abel2")
 public class Comment implements java.io.Serializable {
 
 	// Fields
@@ -101,7 +101,7 @@ public class Comment implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "description", length = 65535)
+	@Column(name = "description",length=1000)
 	public String getDescription() {
 		return this.description;
 	}
@@ -110,7 +110,7 @@ public class Comment implements java.io.Serializable {
 		this.description = description;
 	}
 
-	@Column(name = "createTime", length = 19)
+	@Column(name = "createTime")
 	public Date getCreateTime() {
 		return this.createTime;
 	}

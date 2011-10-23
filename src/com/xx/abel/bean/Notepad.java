@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Notepad entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "notepad")
+@Table(name = "notepad", catalog = "abel2")
 public class Notepad implements java.io.Serializable {
 
 	// Fields
@@ -94,7 +94,7 @@ public class Notepad implements java.io.Serializable {
 		this.title = title;
 	}
 
-	@Column(name = "description", nullable = false, length = 65535)
+	@Column(name = "description", nullable = false, length = 15535)
 	public String getDescription() {
 		return this.description;
 	}

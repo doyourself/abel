@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.xx.abel.bean.Blog;
-import com.xx.abel.bean.Bug;
+import com.xx.abel.bean.Reptile;
 import com.xx.abel.bean.Comment;
 import com.xx.abel.bean.CommentVo;
 import com.xx.abel.bean.Notepad;
@@ -47,7 +47,7 @@ public class CommentServiceImpl implements CommentService {
 			entityClass = Notepad.class;
 			break;
 		case 3:
-			entityClass = Bug.class;
+			entityClass = Reptile.class;
 			break;
 		}
 		String hql = "from Comment where status=0 and sortId=? and level=? and type=? order by createTime desc";

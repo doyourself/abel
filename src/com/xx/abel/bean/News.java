@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * News entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "news")
+@Table(name = "news", catalog = "abel2")
 public class News implements java.io.Serializable {
 
 	// Fields
@@ -24,7 +24,7 @@ public class News implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Integer id;
-	private Bug bug;
+	private Reptile bug;
 	private Integer bugid;
 	private Integer viewCount;
 	private Integer priority;
@@ -36,14 +36,14 @@ public class News implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public News(Bug bug, Integer bugid, Integer viewCount) {
+	public News(Reptile bug, Integer bugid, Integer viewCount) {
 		this.bug = bug;
 		this.bugid = bugid;
 		this.viewCount = viewCount;
 	}
 
 	/** full constructor */
-	public News(Bug bug, Integer bugid, Integer viewCount, Integer priority) {
+	public News(Reptile bug, Integer bugid, Integer viewCount, Integer priority) {
 		this.bug = bug;
 		this.bugid = bugid;
 		this.viewCount = viewCount;
@@ -64,11 +64,11 @@ public class News implements java.io.Serializable {
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@PrimaryKeyJoinColumn
-	public Bug getBug() {
+	public Reptile getBug() {
 		return this.bug;
 	}
 
-	public void setBug(Bug bug) {
+	public void setBug(Reptile bug) {
 		this.bug = bug;
 	}
 

@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * Priority entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "priority")
+@Table(name = "priority", catalog = "abel2")
 public class Priority implements java.io.Serializable {
 
 	// Fields
@@ -90,7 +90,7 @@ public class Priority implements java.io.Serializable {
 		this.remarks = remarks;
 	}
 
-	@Column(name = "description", length = 100)
+	@Column(name = "description", length = 1100)
 	public String getDescription() {
 		return this.description;
 	}

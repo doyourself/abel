@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <th>操作</th>
   </tr>
   <s:iterator value="list" id="ss">
-  <tr>
+  <tr  id="texthide_<s:property value="id"/>">
     <td align="center"><input id="text_<s:property value="id"/>" style="width:90%; border: 1px solid #ccc; height: 20px; line-height: 20px; color: #333; " type="text" name="" value="<s:property value="name"/>"/></td>
     <td align="center"><a class="editUpdate" href="<s:property value="id"/>">修改</a>　<a class="delCategory" href="<s:property value="id"/>">删除</a></td>
   </tr>

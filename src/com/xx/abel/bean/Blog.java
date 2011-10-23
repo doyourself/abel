@@ -20,7 +20,7 @@ import javax.persistence.Table;
  * Blog entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "blog")
+@Table(name = "blog", catalog = "abel2")
 public class Blog implements java.io.Serializable {
 
 	// Fields
@@ -82,7 +82,7 @@ public class Blog implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "title", length = 100)
+	@Column(name = "title")
 	public String getTitle() {
 		return this.title;
 	}
@@ -91,7 +91,7 @@ public class Blog implements java.io.Serializable {
 		this.title = title;
 	}
 
-	@Column(name = "content", length = 65535)
+	@Column(name = "content",length=10000)
 	public String getContent() {
 		return this.content;
 	}
@@ -127,7 +127,7 @@ public class Blog implements java.io.Serializable {
 		this.clickCount = clickCount;
 	}
 
-	@Column(name = "createTime", length = 19)
+	@Column(name = "createTime")
 	public Date getCreateTime() {
 		return this.createTime;
 	}

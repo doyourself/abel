@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  * GroupTopic entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "group_topic")
+@Table(name = "group_topic", catalog = "abel2")
 public class GroupTopic implements java.io.Serializable {
 
 	// Fields
@@ -102,7 +102,7 @@ public class GroupTopic implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "title", nullable = false, length = 300)
+	@Column(name = "title", nullable = false)
 	public String getTitle() {
 		return this.title;
 	}
@@ -111,7 +111,7 @@ public class GroupTopic implements java.io.Serializable {
 		this.title = title;
 	}
 
-	@Column(name = "content", nullable = false, length = 65535)
+	@Column(name = "content", nullable = false,length=3000)
 	public String getContent() {
 		return this.content;
 	}
@@ -121,7 +121,7 @@ public class GroupTopic implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "create_time", nullable = false, length = 10)
+	@Column(name = "create_time", nullable = false)
 	public Date getCreateTime() {
 		return this.createTime;
 	}

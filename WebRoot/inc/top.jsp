@@ -54,8 +54,8 @@ $(function(){
 		<li><a href="">首页</a></li>
 		<li><a href="<%=basePath%>blog_list.action">博文</a></li>
 		<li><a href="">小组</a></li>
-		<li><a href="">Bug</a></li>
-		<li><a href="">分享</a></li>
+		<li><a href="">问答</a></li>
+		<li><a href="">BUG</a></li>
 	</ul>
 	</div>
 </td>

@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
  * Groups entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "groups")
+@Table(name = "groups", catalog = "abel2")
 public class Groups implements java.io.Serializable {
 
 	// Fields
@@ -102,7 +102,7 @@ public class Groups implements java.io.Serializable {
 		this.avatar = avatar;
 	}
 
-	@Column(name = "description", nullable = false, length = 50)
+	@Column(name = "description", nullable = false, length = 3050)
 	public String getDescription() {
 		return this.description;
 	}

@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * GroupReply entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "group_reply")
+@Table(name = "group_reply", catalog = "abel2")
 public class GroupReply implements java.io.Serializable {
 
 	// Fields
@@ -79,7 +79,7 @@ public class GroupReply implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "content", nullable = false, length = 65535)
+	@Column(name = "content", nullable = false)
 	public String getContent() {
 		return this.content;
 	}
@@ -89,7 +89,7 @@ public class GroupReply implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "create_time", nullable = false, length = 10)
+	@Column(name = "create_time", nullable = false)
 	public Date getCreateTime() {
 		return this.createTime;
 	}

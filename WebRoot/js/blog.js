@@ -2,7 +2,6 @@ $(function(){
 	$("#addcategory").click(function(e){
 		e.preventDefault();
 		$("#addcateb").show();
-		$(this).hide();
 	});
 	$("#qx_category_blog").click(function(e){
 		e.preventDefault();
@@ -19,7 +18,7 @@ $(function(){
 			});
 			$("#addcateb").hide();
 		}else{
-			alert(val);
+			alert("请输入分类名称！");
 		}
 	});
 	$("#blog_sub").click(function(e){
@@ -61,6 +60,7 @@ $(function(){
 			alert("非法操作！");
 		}else{
 			$.post("/Abel/category_delete.action",{"category.id":id},function(){})
+			$("#texthide_"+id).hide("slow");
 		}
 	});
 });

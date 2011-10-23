@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Newmessage entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "newmessage")
+@Table(name = "newmessage", catalog = "abel2")
 public class Newmessage implements java.io.Serializable {
 
 	// Fields
@@ -80,7 +80,7 @@ public class Newmessage implements java.io.Serializable {
 		this.newStatus = newStatus;
 	}
 
-	@Column(name = "message", nullable = false, length = 500)
+	@Column(name = "message", nullable = false, length = 1500)
 	public String getMessage() {
 		return this.message;
 	}

@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * Blogcategory entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "category")
+@Table(name = "category", catalog = "abel2")
 public class Category implements java.io.Serializable {
 
 	// Fields

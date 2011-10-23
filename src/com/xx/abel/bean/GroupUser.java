@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  * GroupUser entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "group_user")
+@Table(name = "group_user", catalog = "abel2")
 public class GroupUser implements java.io.Serializable {
 
 	// Fields
@@ -93,7 +93,7 @@ public class GroupUser implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "create_time", nullable = false, length = 10)
+	@Column(name = "create_time", nullable = false)
 	public Date getCreateTime() {
 		return this.createTime;
 	}

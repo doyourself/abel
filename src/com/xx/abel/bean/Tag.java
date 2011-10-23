@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Tag entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "tag")
+@Table(name = "tag", catalog = "abel2")
 public class Tag implements java.io.Serializable {
 
 	// Fields
@@ -94,7 +94,7 @@ public class Tag implements java.io.Serializable {
 		this.resourcesId = resourcesId;
 	}
 
-	@Column(name = "description", nullable = false, length = 100)
+	@Column(name = "description", nullable = false, length = 200)
 	public String getDescription() {
 		return this.description;
 	}
