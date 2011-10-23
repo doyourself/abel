@@ -90,8 +90,8 @@ public class Blog implements java.io.Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	@Column(name = "content",length=10000)
+	
+	@Column(name = "content",columnDefinition="TEXT")
 	public String getContent() {
 		return this.content;
 	}
@@ -100,7 +100,7 @@ public class Blog implements java.io.Serializable {
 		this.content = content;
 	}
 
-	@Column(name = "isAllowedComment")
+	@Column(name = "isAllowedComment",columnDefinition="int default 0")
 	public Integer getIsAllowedComment() {
 		return this.isAllowedComment;
 	}
@@ -109,7 +109,7 @@ public class Blog implements java.io.Serializable {
 		this.isAllowedComment = isAllowedComment;
 	}
 
-	@Column(name = "isReprinted")
+	@Column(name = "isReprinted",columnDefinition="int default 0")
 	public Integer getIsReprinted() {
 		return this.isReprinted;
 	}
@@ -118,7 +118,7 @@ public class Blog implements java.io.Serializable {
 		this.isReprinted = isReprinted;
 	}
 
-	@Column(name = "clickCount")
+	@Column(name = "clickCount",columnDefinition="int default 0")
 	public Integer getClickCount() {
 		return this.clickCount;
 	}

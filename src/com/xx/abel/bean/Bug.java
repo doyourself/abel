@@ -77,7 +77,7 @@ public class Bug implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "compendium",length=10000)
+	@Column(name = "compendium",columnDefinition="TEXT")
 	public String getCompendium() {
 		return this.compendium;
 	}
@@ -86,7 +86,7 @@ public class Bug implements java.io.Serializable {
 		this.compendium = compendium;
 	}
 
-	@Column(name = "problem",length=10000)
+	@Column(name = "problem",columnDefinition="TEXT")
 	public String getProblem() {
 		return this.problem;
 	}
@@ -95,7 +95,7 @@ public class Bug implements java.io.Serializable {
 		this.problem = problem;
 	}
 
-	@Column(name = "reason",length=10000)
+	@Column(name = "reason",columnDefinition="TEXT")
 	public String getReason() {
 		return this.reason;
 	}
@@ -104,7 +104,7 @@ public class Bug implements java.io.Serializable {
 		this.reason = reason;
 	}
 
-	@Column(name = "answer",length=10000)
+	@Column(name = "answer",columnDefinition="TEXT")
 	public String getAnswer() {
 		return this.answer;
 	}

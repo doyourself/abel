@@ -102,7 +102,7 @@ public class Groups implements java.io.Serializable {
 		this.avatar = avatar;
 	}
 
-	@Column(name = "description", nullable = false, length = 3050)
+	@Column(name = "description", nullable = false,columnDefinition="TEXT")
 	public String getDescription() {
 		return this.description;
 	}

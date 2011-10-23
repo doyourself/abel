@@ -80,7 +80,7 @@ public class Newmessage implements java.io.Serializable {
 		this.newStatus = newStatus;
 	}
 
-	@Column(name = "message", nullable = false, length = 1500)
+	@Column(name = "message", nullable = false,columnDefinition="TEXT")
 	public String getMessage() {
 		return this.message;
 	}

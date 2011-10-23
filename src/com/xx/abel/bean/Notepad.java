@@ -85,7 +85,7 @@ public class Notepad implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "title", nullable = false, length = 300)
+	@Column(name = "title", nullable = false, length = 200)
 	public String getTitle() {
 		return this.title;
 	}
@@ -94,7 +94,7 @@ public class Notepad implements java.io.Serializable {
 		this.title = title;
 	}
 
-	@Column(name = "description", nullable = false, length = 15535)
+	@Column(name = "description", nullable = false,columnDefinition="TEXT")
 	public String getDescription() {
 		return this.description;
 	}

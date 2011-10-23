@@ -101,7 +101,7 @@ public class Comment implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "description",length=1000)
+	@Column(name = "description",columnDefinition="TEXT")
 	public String getDescription() {
 		return this.description;
 	}
@@ -155,7 +155,7 @@ public class Comment implements java.io.Serializable {
 		this.level = level;
 	}
 
-	@Column(name = "support")
+	@Column(name = "support",columnDefinition="int default 0")
 	public Integer getSupport() {
 		return this.support;
 	}
@@ -164,7 +164,7 @@ public class Comment implements java.io.Serializable {
 		this.support = support;
 	}
 
-	@Column(name = "opposition")
+	@Column(name = "opposition",columnDefinition="int default 0")
 	public Integer getOpposition() {
 		return this.opposition;
 	}
@@ -173,7 +173,7 @@ public class Comment implements java.io.Serializable {
 		this.opposition = opposition;
 	}
 
-	@Column(name = "report")
+	@Column(name = "report",columnDefinition="int default 0")
 	public Integer getReport() {
 		return this.report;
 	}

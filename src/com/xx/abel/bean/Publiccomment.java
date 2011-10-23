@@ -82,7 +82,7 @@ public class Publiccomment implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "description", nullable = false, length = 10535)
+	@Column(name = "description", nullable = false,columnDefinition="TEXT")
 	public String getDescription() {
 		return this.description;
 	}

@@ -79,7 +79,7 @@ public class Reptile implements java.io.Serializable {
 		this.title = title;
 	}
 
-	@Column(name = "description", length = 15535)
+	@Column(name = "description",columnDefinition="TEXT")
 	public String getDescription() {
 		return this.description;
 	}

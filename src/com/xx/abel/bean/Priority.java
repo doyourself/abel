@@ -90,7 +90,7 @@ public class Priority implements java.io.Serializable {
 		this.remarks = remarks;
 	}
 
-	@Column(name = "description", length = 1100)
+	@Column(name = "description",columnDefinition="TEXT")
 	public String getDescription() {
 		return this.description;
 	}

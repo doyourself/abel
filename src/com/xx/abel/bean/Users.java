@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Type;
+
 /**
  * Users entity. @author MyEclipse Persistence Tools
  */
@@ -409,11 +411,10 @@ public class Users implements java.io.Serializable {
 	public void setQq(String qq) {
 		this.qq = qq;
 	}
-
+	@Column(name = "points",columnDefinition="int default 0")
 	public Integer getPoints() {
 		return points;
 	}
-	@Column(name = "points")
 	public void setPoints(Integer points) {
 		this.points = points;
 	}

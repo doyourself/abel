@@ -111,7 +111,7 @@ public class GroupTopic implements java.io.Serializable {
 		this.title = title;
 	}
 
-	@Column(name = "content", nullable = false,length=3000)
+	@Column(name = "content", nullable = false,columnDefinition="TEXT")
 	public String getContent() {
 		return this.content;
 	}
