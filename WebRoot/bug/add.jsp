@@ -4,12 +4,12 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<form action="<%=basePath %>bug_save.action" method="post">
+<form action="<%=basePath %>bug_save.action" id="bugForm" method="post">
 <table id="categoryList" cellpadding="0" cellspacing="0">
   <tr>
     <th width="20%">BUG简述</th>
-    <th>
-	<textarea name="bug.compendium" style="width:99%; height:99%;"></textarea>
+    <th align="left">
+		<input id="compendium" name="bug.compendium" maxlength="100" style="width:59%; height:99%;"/>
 	</th>
   </tr>
   <tr class="quesTr">
@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <td><textarea name="bug.answer" style="width:99%; height:99%;"></textarea></td>
   </tr>
   <tr>
-  	<td colspan="2"><button>提交</button> <button>取消</button> </td>
+  	<td colspan="2"><button id="sub" type="button">提交</button> <button type="reset">取消</button> </td>
   </tr>
 </table>
 </form>

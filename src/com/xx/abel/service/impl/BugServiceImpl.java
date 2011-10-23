@@ -39,7 +39,15 @@ public class BugServiceImpl implements BugService {
 	public void save(Bug bug) {
 		if (bug.getCreateTime() == null)
 			bug.setCreateTime(new Date());
-		bugDao.save(bug);
+		bugDao.saveOrUpdate(bug);
+	}
+
+	public Bug findById(int id) {
+		return bugDao.findById(Bug.class, id);
+	}
+
+	public void delete(Bug bug) {
+		bugDao.deleteById(Bug.class,bug.getId());
 	}
 
 }

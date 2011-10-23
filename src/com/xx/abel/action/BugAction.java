@@ -25,6 +25,15 @@ public class BugAction {
 		list = bugService.findAll();
 		return "success";
 	}
+	public String findById(){
+		Integer id =bug.getId();
+		if(id!=null)
+		bug = bugService.findById(id);
+		return "view";
+	}
+	public void delete(){
+		bugService.delete(bug);
+	}
 	
 	private List<Bug> list;
 	

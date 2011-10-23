@@ -15,6 +15,7 @@
 <link rel='stylesheet' type='text/css' href='<%=basePath %>/css/fullcalendar/fullcalendar.print.css' media='print' />
 <script type='text/javascript' src='<%=basePath %>js/jquery-1.4.2.min.js'></script>
 <script type='text/javascript' src='<%=basePath %>js/jquery-ui.js'></script>
+<script type='text/javascript' src='<%=basePath %>js/bug.js'></script>
 <script type='text/javascript' src='<%=basePath %>js/fullcalendar.min.js'></script>
 <link media="screen" rel="stylesheet" href="<%=basePath%>/css/colorbox.css" />
 <script src="<%=basePath%>/js/jquery.colorbox.js"></script>
@@ -37,7 +38,7 @@
 				{
 					title: '<s:property value="compendium"/>',
 					start: new Date(<s:date format="yyyy" name="createTime"/>, <s:date format="M" name="createTime"/>, <s:date format="d" name="createTime"/>,<s:date format="H" name="createTime"/>,<s:date format="m" name="createTime"/>,<s:date format="s" name="createTime"/>),
-					url: 'http://google.com/',
+					url: '<%=basePath%>bug_findById.action?bug.id=<s:property value="id"/>',
 					allDay: false
 				},
 				</s:iterator>
@@ -89,12 +90,6 @@ $(function(){
 	</div>
 </div>
 </div>
-<s:iterator value="list" id="l">
-	<s:date format="y" name="createTime"/>
-	<s:date format="M" name="createTime"/>
-	<s:date format="d" name="createTime"/>
-	<s:property value="compendium"/>
-</s:iterator>
 <div style="height: auto; padding:5px 0; background:green; position: fixed; z-index: 100000000; top: 150px; right: 0pt; overflow: hidden; width: 20px;">
 	<a href="" id="addBug" style="color: #fff;">添加B<br/>U<br/>G</a>
 </div>

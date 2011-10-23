@@ -4,30 +4,31 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<form action="<%=basePath %>bug_save.action" method="post">
+<form action="<%=basePath %>bug_save.action" id="bugForm" method="post">
 <table id="categoryList" cellpadding="0" cellspacing="0">
   <tr>
     <th width="20%">BUG简述</th>
-    <th>
-	<textarea name="bug.compendium" style="width:99%; height:99%;"></textarea>
+    <th align="left">
+    <input type="hidden" name="bug.id"  value="<s:property value="bug.id"/>"/>
+	<input name="bug.compendium" id="compendium" maxlength="100" style="width:59%; height:99%;" value="<s:property value="bug.compendium"/>"/>
 	</th>
   </tr>
   <tr class="quesTr">
 	  <td>问题：</td>
 	  <td>
-	  <textarea name="bug.problem" style="width:99%; height:99%;"></textarea>
+	  <textarea name="bug.problem" style="width:99%; height:99%;"><s:property value="bug.problem"/></textarea>
 	  </td>
   </tr>
   <tr class="quesTr">
 	  <td>原因</td>
-	  <td><textarea name="bug.reason" style="width:99%; height:99%;"></textarea></td>
+	  <td><textarea name="bug.reason" style="width:99%; height:99%;"><s:property value="bug.reason"/></textarea></td>
   </tr>
   <tr class="quesTr">
 	  <td>答案</td>
-	  <td><textarea name="bug.answer" style="width:99%; height:99%;"></textarea></td>
+	  <td><textarea name="bug.answer" style="width:99%; height:99%;"><s:property value="bug.answer"/></textarea></td>
   </tr>
   <tr>
-  	<td colspan="2"><button>提交</button> <button>取消</button> </td>
+  	<td colspan="2"><button id="sub" type="button">修改</button> <button type="reset">取消</button> <button type="button" id="delbug" name="<s:property value="bug.id"/>">删除</button> </td>
   </tr>
 </table>
 </form>
