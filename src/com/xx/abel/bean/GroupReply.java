@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * GroupReply entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "group_reply", catalog = "abel2")
+@Table(name = "group_reply")
 public class GroupReply implements java.io.Serializable {
 
 	// Fields

@@ -55,7 +55,7 @@ $(function(){
 		<li><a href="<%=basePath%>blog_list.action">博文</a></li>
 		<li><a href="">小组</a></li>
 		<li><a href="">问答</a></li>
-		<li><a href="">BUG</a></li>
+		<li><a href="<%=basePath%>bug/list.jsp">BUG</a></li>
 	</ul>
 	</div>
 </td>

@@ -2,6 +2,7 @@ package com.xx.abel.action;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import com.xx.abel.bean.Blog;
 import com.xx.abel.bean.Category;
@@ -13,6 +14,7 @@ import com.xx.abel.service.intf.CategoryService;
 import com.xx.abel.service.intf.TagService;
 
 @Controller
+@Scope("prototype")
 public class BlogAction extends BaseAction {
 
 	private static final long serialVersionUID = 1L;

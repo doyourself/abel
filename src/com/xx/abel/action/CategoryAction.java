@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import com.xx.abel.bean.Category;
 import com.xx.abel.bean.Users;
@@ -11,6 +12,7 @@ import com.xx.abel.service.impl.UserServiceImpl;
 import com.xx.abel.service.intf.CategoryService;
 
 @Controller
+@Scope("prototype")
 public class CategoryAction extends BaseAction {
 
 	private static final long serialVersionUID = 1L;

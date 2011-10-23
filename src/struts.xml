@@ -53,6 +53,11 @@
 			<result name="show2">/comment/show2.jsp</result>
 			<interceptor-ref name="mystack" />
 		</action>
+		<action name="bug_*" class="bugAction" method="{1}">
+			<result name="list" type="redirect">/bug_list.action</result>
+			<result name="success">/bug/list.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
     </package>
 	
 </struts>

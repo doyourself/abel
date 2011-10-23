@@ -1,9 +1,14 @@
 package com.xx.abel.bean;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -15,7 +20,7 @@ import javax.persistence.Table;
  */
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "bug", catalog = "abel2")
+@Table(name = "bug")
 public class Bug implements java.io.Serializable {
 
 	// Fields
@@ -28,7 +33,7 @@ public class Bug implements java.io.Serializable {
 	private String answer;
 	private String isAllowedComment;
 	private String isReprinted;
-	private String createTime;
+	private Date createTime;
 
 	// Constructors
 
@@ -37,14 +42,14 @@ public class Bug implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Bug(String createTime) {
+	public Bug(Date createTime) {
 		this.createTime = createTime;
 	}
 
 	/** full constructor */
 	public Bug(Users users, String compendium, String problem, String reason,
 			String answer, String isAllowedComment, String isReprinted,
-			String createTime) {
+			Date createTime) {
 		this.users = users;
 		this.compendium = compendium;
 		this.problem = problem;
@@ -130,13 +135,13 @@ public class Bug implements java.io.Serializable {
 	public void setIsReprinted(String isReprinted) {
 		this.isReprinted = isReprinted;
 	}
-
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "createTime", nullable = false)
-	public String getCreateTime() {
+	public Date getCreateTime() {
 		return this.createTime;
 	}
 
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 

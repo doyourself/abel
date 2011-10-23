@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
  * Bug entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "reptile", catalog = "abel2")
+@Table(name = "reptile")
 public class Reptile implements java.io.Serializable {
 
 	// Fields

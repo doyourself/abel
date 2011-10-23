@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Notepad entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "notepad", catalog = "abel2")
+@Table(name = "notepad")
 public class Notepad implements java.io.Serializable {
 
 	// Fields

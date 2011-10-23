@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Friends entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "friends", catalog = "abel2")
+@Table(name = "friends")
 public class Friends implements java.io.Serializable {
 
 	// Fields

@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * Blogreprint entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "blogreprint", catalog = "abel2")
+@Table(name = "blogreprint")
 public class Blogreprint implements java.io.Serializable {
 
 	// Fields

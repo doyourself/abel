@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  * GroupTopic entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "group_topic", catalog = "abel2")
+@Table(name = "group_topic")
 public class GroupTopic implements java.io.Serializable {
 
 	// Fields

@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
  * Groups entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "groups", catalog = "abel2")
+@Table(name = "groups")
 public class Groups implements java.io.Serializable {
 
 	// Fields

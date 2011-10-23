@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Tag entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "tag", catalog = "abel2")
+@Table(name = "tag")
 public class Tag implements java.io.Serializable {
 
 	// Fields

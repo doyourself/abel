@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Points entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "points", catalog = "abel2")
+@Table(name = "points")
 public class Points implements java.io.Serializable {
 
 	// Fields

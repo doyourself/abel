@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * Priority entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "priority", catalog = "abel2")
+@Table(name = "priority")
 public class Priority implements java.io.Serializable {
 
 	// Fields

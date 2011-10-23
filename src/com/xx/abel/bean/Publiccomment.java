@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * Publiccomment entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "publiccomment", catalog = "abel2")
+@Table(name = "publiccomment")
 public class Publiccomment implements java.io.Serializable {
 
 	// Fields

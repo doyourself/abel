@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
  * Rulepoints entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "rulepoints", catalog = "abel2")
+@Table(name = "rulepoints")
 public class Rulepoints implements java.io.Serializable {
 
 	// Fields

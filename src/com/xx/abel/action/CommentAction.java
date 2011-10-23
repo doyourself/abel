@@ -2,12 +2,14 @@ package com.xx.abel.action;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.xx.abel.bean.Comment;
 import com.xx.abel.service.intf.CommentService;
 
 @Controller
+@Scope("prototype")
 public class CommentAction extends BaseAction{
 
 	/**

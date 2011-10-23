@@ -15,13 +15,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.Type;
-
 /**
  * Users entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "users", catalog = "abel2")
+@Table(name = "users")
 public class Users implements java.io.Serializable {
 
 	// Fields
