@@ -110,6 +110,7 @@
 				<value>com.xx.abel.bean.Blogreprint</value>
 				<value>com.xx.abel.bean.Comment</value>
 				<value>com.xx.abel.bean.Bug</value>
+				<value>com.xx.abel.bean.Dynamic</value>
 			</list>
 		</property>
 	</bean>
