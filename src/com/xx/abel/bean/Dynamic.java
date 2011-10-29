@@ -3,7 +3,13 @@ package com.xx.abel.bean;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -24,15 +30,13 @@ public class Dynamic implements java.io.Serializable {
 	private Integer id;
 	private String title;
 	private String description;
-	private Integer uid;
-	private String userAvatar;
+	private Users users;
 	private Integer type;
 	private Date createTime;
 	private Integer clickCount;
 	private String href;
 	private Integer viewCount;
 	private Integer resoureId;
-
 	// Constructors
 
 	/** default constructor */
@@ -40,9 +44,8 @@ public class Dynamic implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Dynamic(Integer uid, Integer type, Date createTime,
+	public Dynamic(Integer type, Date createTime,
 			Integer clickCount, Integer viewCount) {
-		this.uid = uid;
 		this.type = type;
 		this.createTime = createTime;
 		this.clickCount = clickCount;
@@ -51,13 +54,11 @@ public class Dynamic implements java.io.Serializable {
 
 	/** full constructor */
 	public Dynamic(String title, String description, Integer uid,
-			String userAvatar, Integer type, Date createTime,
+			Integer type, Date createTime,
 			Integer clickCount, String href, Integer viewCount,
 			Integer resoureId) {
 		this.title = title;
 		this.description = description;
-		this.uid = uid;
-		this.userAvatar = userAvatar;
 		this.type = type;
 		this.createTime = createTime;
 		this.clickCount = clickCount;
@@ -96,33 +97,22 @@ public class Dynamic implements java.io.Serializable {
 		this.description = description;
 	}
 
-	@Column(name = "uid", nullable = false)
-	public Integer getUid() {
-		return this.uid;
-	}
-
-	public void setUid(Integer uid) {
-		this.uid = uid;
-	}
-
-	@Column(name = "userAvatar", length = 40)
-	public String getUserAvatar() {
-		return this.userAvatar;
-	}
-
-	public void setUserAvatar(String userAvatar) {
-		this.userAvatar = userAvatar;
-	}
-
+	/**
+	 * 1、心情 2、日志
+	 * @return
+	 */
 	@Column(name = "type", nullable = false)
 	public Integer getType() {
 		return this.type;
 	}
-
+	/**
+	 * 
+	 * @param type 1、心情 2、日志
+	 */
 	public void setType(Integer type) {
 		this.type = type;
 	}
-
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "createTime", nullable = false, length = 19)
 	public Date getCreateTime() {
 		return this.createTime;
@@ -150,7 +140,7 @@ public class Dynamic implements java.io.Serializable {
 		this.href = href;
 	}
 
-	@Column(name = "viewCount", nullable = false,columnDefinition="int default 0")
+	@Column(name = "viewCount", columnDefinition="int default 0")
 	public Integer getViewCount() {
 		return this.viewCount;
 	}
@@ -166,6 +156,15 @@ public class Dynamic implements java.io.Serializable {
 
 	public void setResoureId(Integer resoureId) {
 		this.resoureId = resoureId;
+	}
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "uid")
+	public Users getUsers() {
+		return users;
+	}
+
+	public void setUsers(Users users) {
+		this.users = users;
 	}
 
 }

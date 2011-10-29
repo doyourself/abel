@@ -1,13 +1,13 @@
 package com.xx.abel.bean;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.sql.Timestamp;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -38,7 +38,6 @@ public class Comment implements java.io.Serializable {
 	private Integer opposition;
 	private Integer report;
 	private Integer parentId;
-	
 
 	// Constructors
 	@Column(name = "parentId")

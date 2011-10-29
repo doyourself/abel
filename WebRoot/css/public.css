@@ -113,3 +113,12 @@ a:hover{
  .cla_content{width: 680px; margin:0 0 0 20px; float: left; display: inline;}
  .clatl{border-radius: 4px; float: left; display: inline;}
  .clatr{font-weight:100; font-size:12px; float: right; display: inline;}
+ 
+ #alertPG{left:40%;  border-radius:8px; border:1px solid #ccc; background: #666666; position: fixed; z-index: 100000000; top:45%;}
+ #alertMenu{width:100%; background:#fff; text-align:right; float:right; display: inline;}
+ #alertX{width:80%; margin-right:10px; color:#333; text-align:right; float:right; display: inline;}
+ #alertX a{color: #333; text-decoration:none; }
+ #alertBanner{padding: 10px 0; float: left; display: inline;}
+ #request_a_quote lable{width: 100%; float: left; display: inline;}
+#alertX a{width: 10px; height: 10px; background: url(../images/blue/close_1.gif) no-repeat;}
+ 

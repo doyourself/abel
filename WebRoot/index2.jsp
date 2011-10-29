@@ -19,35 +19,6 @@
 <script type='text/javascript' src='<%=basePath %>js/fullcalendar.min.js'></script>
 <link media="screen" rel="stylesheet" href="<%=basePath%>/css/colorbox.css" />
 <script src="<%=basePath%>/js/jquery.colorbox.js"></script>
-<script type='text/javascript'>
-	$(document).ready(function() {
-		var date = new Date();
-		var d = date.getDate();
-		var m = date.getMonth();
-		var y = date.getFullYear();
-		$('#calendar').fullCalendar({
-			theme: true,
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
-			editable: true,
-			events: [
-			<s:iterator value="list" id="l">
-				{
-					title: '<s:property value="compendium"/>',
-					start: new Date(<s:date format="yyyy" name="createTime"/>, <s:date format="M" name="createTime"/>, <s:date format="d" name="createTime"/>,<s:date format="H" name="createTime"/>,<s:date format="m" name="createTime"/>,<s:date format="s" name="createTime"/>),
-					url: '<%=basePath%>bug_findById.action?bug.id=<s:property value="id"/>',
-					allDay: false
-				},
-				</s:iterator>
-			]
-		});
-		
-	});
-
-</script>
 <style type='text/css'>
 	body {
 		text-align: center;
@@ -64,28 +35,6 @@
 	.menu a:hover{background: url(<%=basePath%>/images/hr/templatemo_menu_hover.jpg) no-repeat; float: left; display: inline;}
 	#index{background: url(<%=basePath%>/images/hr/templatemo_menu_hover.jpg) no-repeat;}
 </style>
-<script>
-$(function(){
-	$("#addBug").click(function(e){
-		e.preventDefault();
-		$.fn.colorbox({href:"/Abel/bug/add.jsp"});	
-	});
-	$(".fc-event").click(function(e){
-		e.preventDefault();
-		var varHref = $(this).attr("href");
-		$.fn.colorbox({href:varHref});	
-	});
-	$(".ui-widget-content").click(function(){
-		var cla = $(this).attr("class");
-		var fcom = cla.indexOf("fc-other-month");
-		if(fcom == -1){
-			var fcdn = $(this).find(".fc-day-number").html();
-			var time = $(".fc-header-title h2").html();
-			var time = time+" "+fcdn;
-		}
-	});
-});
-</script>
 </head>
 <body style="100%; margin:0; padding:0; background: #ccc;">
 <div id="top" style="width:100%; height:47px; padding-bottom:10px; text-align:center; background: url(<%=basePath%>/images/hr/templatemo_menu.jpg) repeat-x;">

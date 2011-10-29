@@ -59,6 +59,16 @@
 			<result name="view">/bug/view.jsp</result>
 			<interceptor-ref name="mystack" />
 		</action>
+		<action name="dynamic_*" class="dynamicAction" method="{1}">
+			<result name="list">/comment/addIndex.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		<action name="notepad_*" class="notepadAction" method="{1}">
+			<result name="list" type="redirect">/notepad_list.action</result>
+			<result name="success">/notepad/list.jsp</result>
+			<result name="view">/notepad/view.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
     </package>
 	
 </struts>

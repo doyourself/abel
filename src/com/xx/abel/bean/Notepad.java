@@ -34,8 +34,17 @@ public class Notepad implements java.io.Serializable {
 	private Integer comment;
 	private Integer reproduced;
 	private Integer orderType;
+	private Integer isView;
 
 	// Constructors
+	@Column(name = "isView", nullable = false,columnDefinition="int default 0")
+	public Integer getIsView() {
+		return isView;
+	}
+
+	public void setIsView(Integer isView) {
+		this.isView = isView;
+	}
 
 	/** default constructor */
 	public Notepad() {
@@ -85,7 +94,7 @@ public class Notepad implements java.io.Serializable {
 		this.users = users;
 	}
 
-	@Column(name = "title", nullable = false, length = 200)
+	@Column(name = "title", length = 200)
 	public String getTitle() {
 		return this.title;
 	}
