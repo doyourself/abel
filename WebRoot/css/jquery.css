@@ -1,5 +1,5 @@
 .btn3{width: 55px; height: 24px; cursor: pointer; color:#336699; border:0;border-radius:4px; background: url(../images/buttom/btn_3.jpg) no-repeat;}
-#request_a_quote lable{width: 100%; float: left; display: inline;}
+#request_a_quote lable{width: 100%; color:#fff; float: left; display: inline;}
 #alertX a{width: 10px; height: 10px; background: url(../images/blue/close_1.gif) no-repeat;}
 /*
  * Color, Border, and Button Rules

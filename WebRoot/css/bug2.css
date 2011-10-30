@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+#tempBanner{width: 980px;border: 1px solid #383838; padding: 0px; background: #0A0A0A;}
+#bugListBT{width: 960px; height:27px; padding: 0px; float: left; display: inline;}
+#tempBB{width: 960px;padding:10px; background:url(../images/hr.jpg) repeat-x;}
+#bugListBT div{color:#CFBD7B; font-weight:bold; font-size:13px; float: left; display: inline;}
+#bugListBT #t_r{float:right; display: inline;}
+#ajax{width: 100%; padding:10px 0; text-align: center; float:  left; display: inline;}
+#ajax IMG {
+	vertical-align: middle; margin-right: 20px;
+}

@@ -149,6 +149,7 @@ public class UsersAction extends BaseAction {
 
 			user.setStatus(0);
 			user.setType(1);
+			user.setBugType(0);
 			user.setCreateTime(new Date());
 			user.setLastLogin(new Date());
 			String password = user.getPassword();

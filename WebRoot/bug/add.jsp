@@ -14,17 +14,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <tr class="quesTr">
 	  <td>问题：</td>
-	  <td>
+	  <td align="left">
 	  <textarea name="bug.problem" style="width:99%; height:99%;"></textarea>
 	  </td>
   </tr>
   <tr class="quesTr">
 	  <td>原因</td>
-	  <td><textarea name="bug.reason" style="width:99%; height:99%;"></textarea></td>
+	  <td align="left"><textarea name="bug.reason" style="width:99%; height:99%;"></textarea></td>
   </tr>
   <tr class="quesTr">
 	  <td>答案</td>
-	  <td><textarea name="bug.answer" style="width:99%; height:99%;"></textarea></td>
+	  <td align="left"><textarea name="bug.answer" style="width:99%; height:99%;"></textarea></td>
   </tr>
   <tr>
   	<td colspan="2"><button id="sub" type="button">提交</button> <button type="reset">重置</button> </td>
@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </form>
 <style>
 	#compendium{width: 100%; height: 100%; border: 0px;}
-	.quesTr td{height: 200px;}
+	.quesTr td{text-align:center; height: 200px;}
 	#categoryList textarea{font-size: 12px; border: 0px;}
 	#categoryList{width: 900px; border-top:1px solid #ccc; border-right: 1px solid #ccc;}
 	#categoryList td{ line-height:24px; padding:5px 0; border-bottom:1px solid #ccc; border-left: 1px solid #ccc;}

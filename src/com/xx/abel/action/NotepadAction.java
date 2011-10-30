@@ -1,13 +1,10 @@
 package com.xx.abel.action;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-
 import com.xx.abel.bean.Notepad;
-import com.xx.abel.service.impl.UserServiceImpl;
 import com.xx.abel.service.intf.NotepadService;
 
 @Controller

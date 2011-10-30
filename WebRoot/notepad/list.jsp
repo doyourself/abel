@@ -15,7 +15,7 @@
 <link rel='stylesheet' type='text/css' href='<%=basePath %>/css/fullcalendar/fullcalendar.print.css' media='print' />
 <script type='text/javascript' src='<%=basePath %>js/jquery-1.4.2.min.js'></script>
 <script type='text/javascript' src='<%=basePath %>js/jquery-ui.js'></script>
-<script type='text/javascript' src='<%=basePath %>js/bug.js'></script>
+<script type='text/javascript' src='<%=basePath %>js/notepad.js'></script>
 <script type='text/javascript' src='<%=basePath %>js/fullcalendar.min.js'></script>
 <link media="screen" rel="stylesheet" href="<%=basePath%>/css/colorbox.css" />
 <link media="screen" rel="stylesheet" href="<%=basePath%>/css/templatemo_style.css" />
@@ -37,17 +37,17 @@
 			events: [
 			<s:iterator value="list" id="l">
 				{
-					title: '<s:property value="compendium"/>',
+					title: '<s:property value="title"/>',
 					start: new Date(<s:date format="yyyy" name="createTime"/>, <s:date format="M" name="createTime"/>, <s:date format="d" name="createTime"/>,<s:date format="H" name="createTime"/>,<s:date format="m" name="createTime"/>,<s:date format="s" name="createTime"/>),
-					url: '<%=basePath%>bug_findById.action?bug.id=<s:property value="id"/>',
-					allDay: false
+					url: '<%=basePath%>notepad_findById.action?notepad.id=<s:property value="id"/>'
+					
 				},
 				</s:iterator>
 			]
 		});
 		
 	});
-
+<!--allDay: false-->
 </script>
 <style type='text/css'>
 	body {
@@ -65,7 +65,7 @@
 $(function(){
 	$("#addBug").click(function(e){
 		e.preventDefault();
-		$.fn.colorbox({href:"/Abel/bug/add.jsp"});	
+		$.fn.colorbox({href:"/Abel/notepad/add.jsp"});	
 	});
 	$(".fc-event").click(function(e){
 		e.preventDefault();

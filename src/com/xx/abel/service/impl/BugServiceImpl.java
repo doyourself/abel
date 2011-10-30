@@ -12,6 +12,7 @@ import com.xx.abel.bean.Bug;
 import com.xx.abel.bean.Users;
 import com.xx.abel.dao.intf.BugDao;
 import com.xx.abel.service.intf.BugService;
+import com.xx.abel.util.PageListData;
 
 @Service
 public class BugServiceImpl implements BugService {
@@ -19,10 +20,18 @@ public class BugServiceImpl implements BugService {
 	private BugDao bugDao;
 
 	@SuppressWarnings("static-access")
-	public List<Bug> findAll() {
+	public List<Bug> findAll(Integer start,Integer count) {
 		Users user = UserServiceImpl.getUser();
-		List<Bug> list = bugDao.findByProperty(Bug.class, "users.id", user
-				.getId(), 1);
+		List<Bug> list;
+		if(start==null){
+			list = bugDao.list(UserServiceImpl.getUser().getId());
+		}else{
+			String hql = "from Bug where users.id="+user.getId()+" order by createTime desc";
+			PageListData pd =  bugDao.findList(Bug.class, hql, null, 1, count);
+			list = pd.getDataList();
+//			list = bugDao.list(user.getId(),start,end);
+		}
+		if(user.getBugType()==0){
 		List<Bug> l = new LinkedList<Bug>();
 		for (Bug bug : list) {
 			Calendar c = Calendar.getInstance();
@@ -33,6 +42,8 @@ public class BugServiceImpl implements BugService {
 			l.add(bug);
 		}
 		return l;
+		}else
+			return list;
 	}
 
 	public void save(Bug bug) {

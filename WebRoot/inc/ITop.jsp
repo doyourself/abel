@@ -14,7 +14,7 @@ String[] indexlength = bpn.split("/");
 			<li class="menu"><a href="<%=basePath %>blogindex.jsp">博客</a></li>
 			<li class="menu"><a href="">小组</a></li>
 			<li class="menu"><a href="">问答</a></li>
-			<li class="menu" id="index"><a href="<%=basePath %>bug_list.action">BUG</a></li>
+			<li class="menu" id="index"><a href="<%=basePath %>bug_list.action" <% if(bpn.indexOf("bug")!=-1){out.print("class='current'");} %> >BUG</a></li>
 			<li class="menu"><a href="<%=basePath %>notepad_list.action" <% if(bpn.indexOf("notepad")!=-1){out.print("class='current'");} %> >日志</a></li>
         </ul> 
     </div>

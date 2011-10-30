@@ -40,7 +40,7 @@ public class NotepadServiceImpl implements NotepadService{
 		if(notepad.getUsers() == null)notepad.setUsers(UserServiceImpl.getUser());
 		if(notepad.getCreateTime()==null)notepad.setCreateTime(new Date());
 		if(notepad.getIsView()==null)notepad.setIsView(0);
-		notepadDao.save(notepad);
+		notepadDao.saveOrUpdate(notepad);
 	}
 
 	public Notepad findById(Integer id) {

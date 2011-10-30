@@ -155,6 +155,7 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 	private String getCountsHql(String hql) {
 		int index = hql.indexOf("from");
 		if (index != -1) {
+			System.out.println(hql.substring(index));
 			return "select count(*) " + hql.substring(index);
 		}
 		throw new RuntimeException("sql====" + hql);

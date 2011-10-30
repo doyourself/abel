@@ -57,6 +57,10 @@
 			<result name="list" type="redirect">/bug_list.action</result>
 			<result name="success">/bug/list.jsp</result>
 			<result name="view">/bug/view.jsp</result>
+			<result name="success2">/bug/list2.jsp</result>
+			<result name="view2">/bug/view2.jsp</result>
+			<result name="update">/bug/add2.jsp</result>
+			<result name="ajax">/bug/ajax.jsp</result>
 			<interceptor-ref name="mystack" />
 		</action>
 		<action name="dynamic_*" class="dynamicAction" method="{1}">

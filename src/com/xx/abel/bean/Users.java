@@ -52,6 +52,7 @@ public class Users implements java.io.Serializable {
 	private String work;
 	private String qq;
 	private Integer points;
+	private Integer bugType;
 	private Set<GroupUser> groupUsers = new HashSet<GroupUser>(0);
 	private Set<Friends> friendses = new HashSet<Friends>(0);
 	private Set<Publiccomment> publiccomments = new HashSet<Publiccomment>(0);
@@ -448,5 +449,13 @@ public class Users implements java.io.Serializable {
 
 	public void setBugs(Set<Bug> bugs) {
 		this.bugs = bugs;
+	}
+	@Column(name = "bugType", nullable = false, length = 1,columnDefinition="CHAR")
+	public Integer getBugType() {
+		return bugType;
+	}
+
+	public void setBugType(Integer bugType) {
+		this.bugType = bugType;
 	}
 }

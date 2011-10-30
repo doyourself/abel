@@ -4,31 +4,23 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<form action="<%=basePath %>bug_save.action" id="bugForm" method="post">
+<form action="<%=basePath %>notepad_save.action" id="notepadForm" method="post">
 <table id="categoryList" cellpadding="0" cellspacing="0">
   <tr>
-    <th width="20%">BUG简述</th>
+    <th width="20%">简述</th>
     <th align="left">
-    <input type="hidden" name="bug.id"  value="<s:property value="bug.id"/>"/>
-	<input name="bug.compendium" id="compendium" maxlength="100" style="width:59%; height:99%;" value="<s:property value="bug.compendium"/>"/>
+    <input type="hidden" name="notepad.id"  value="<s:property value="notepad.id"/>"/>
+	<input name="notepad.title" id="compendium" maxlength="100" style="width:59%; height:99%;" value="<s:property value="notepad.title"/>"/>
 	</th>
   </tr>
   <tr class="quesTr">
 	  <td>问题：</td>
 	  <td>
-	  <textarea name="bug.problem" style="width:99%; height:99%;"><s:property value="bug.problem"/></textarea>
+	  <textarea name="notepad.description" style="width:99%; height:99%;"><s:property value="notepad.description"/></textarea>
 	  </td>
   </tr>
-  <tr class="quesTr">
-	  <td>原因</td>
-	  <td><textarea name="bug.reason" style="width:99%; height:99%;"><s:property value="bug.reason"/></textarea></td>
-  </tr>
-  <tr class="quesTr">
-	  <td>答案</td>
-	  <td><textarea name="bug.answer" style="width:99%; height:99%;"><s:property value="bug.answer"/></textarea></td>
-  </tr>
   <tr>
-  	<td colspan="2"><button id="sub" type="button">修改</button> <button type="reset">重置</button> <button type="button" id="delbug" name="<s:property value="bug.id"/>">删除</button> </td>
+  	<td colspan="2"><button id="sub" type="button">修改</button> <button type="reset">重置</button> <button type="button" id="delnotepad" name="<s:property value="notepad.id"/>">删除</button> </td>
   </tr>
 </table>
 </form>
