@@ -53,6 +53,8 @@ public interface BaseDAO<T,PK> {
 	
 	public PageListData findList(Class<T> entityClass, String hql, Object[] params, int currentPage, int pageSize);
 	
+	public List<T> findList(String hql,int start,int end);
+	
 	
 	public List<T> findByProperty(Class<T> entityClass, String propertyName, Object value,int type);
 	

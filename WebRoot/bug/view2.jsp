@@ -20,12 +20,16 @@
 			href="<%=basePath%>css/public2.css" />
 		<link rel="stylesheet" type="text/css"
 			href="<%=basePath%>css/bug2.css" />
+		<style>
+			.blbbanner{padding: 10px 20px;}
+			.bab{background:#333; border-bottom: 1px dashed #444;}
+		</style>
 	</head>
 	<body style="background: #2F3134;">
 		<s:include value="/inc/ITop.jsp"></s:include>
 		<div id="templatemo_wrapper">
 			<div class="templatemo_content" id="tempBanner">
-				<div id="tempBB">
+				<div id="tempBB" style="padding-bottom:50px;">
 					<div id="bugListBT">
 						<div id="t_l">
 							<a href="<%=basePath%>bug_list.action">BUG列表</a>&nbsp;&gt;
@@ -35,20 +39,19 @@
 							<s:date format="yyyy年MM月dd日 E HH:mm" name="bug.createTime"/>
 						</div>
 					</div>
-					<div class="blbbanner">
-						<font>BUG简述：</font>
-						<s:property value="bug.compendium"/>
+					<div class="blbbanner" style="text-align: center;">
+						<h2><s:property value="bug.compendium"/></h2>
 					</div>
-					<div class="blbbanner">
+					<div class="blbbanner bab">
 						<font>问题：</font>
 							<s:property value="bug.problem" />
 					</div>
-					<div class="blbbanner">
-						<font>原因</font>
+					<div class="blbbanner bab">
+						<font>原因：</font>
 							<s:property value="bug.reason" />
 					</div>
-					<div class="blbbanner">
-						<font>答案</font>
+					<div class="blbbanner bab">
+						<font>答案：</font>
 							<s:property value="bug.answer" />
 					</div>
 					<div class="cleaner"></div>

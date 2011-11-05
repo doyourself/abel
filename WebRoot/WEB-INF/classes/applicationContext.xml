@@ -83,7 +83,8 @@
 				<prop key="hibernate.show_sql">true</prop>
 				<!-- 设置Hibernate一个提交批次中的最大SQL语句数 -->
 				<prop key="hibernate.jdbc.batch_size">50</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- 当没数据库 时，建一个库 把下面注释打开 -->
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
 			</props>
 		</property>
 		<!--主键Bean类		-->

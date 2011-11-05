@@ -237,5 +237,12 @@ public class BaseDAOImpl<T, PK extends Serializable> extends
 		this.getHibernateTemplate().clear();
 		return getHibernateTemplate().get(clazz, id);
 	}
+	@SuppressWarnings("unchecked")
+	public List<T> findList(String hql, int start, int end) {
+		Query query = getSession().createQuery(hql);
+		query.setFirstResult(start);
+		query.setMaxResults(end);
+		return query.list();
+	}
 
 }

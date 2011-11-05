@@ -39,12 +39,19 @@ public class BugAction {
 			list = bugService.findAll(null,null);
 			return "success";
 		}else{
-			list = bugService.findAll(0,5);
+			start=0;
+			end=5;
+			list = bugService.findAll(start,end);
+			start=end;
 			return "success2";
 		}
 	}
 	public String ajaxList(){
-		list = bugService.findAll(start,end);
+		end=start+3;
+		System.out.println("start:"+start+"       end:"+end);
+		list = bugService.findAll(start,3);
+		start=end;
+		
 		return "ajax";
 	}
 
@@ -53,6 +60,15 @@ public class BugAction {
 		if (id != null)
 			bug = bugService.findById(id);
 		Users user = UserServiceImpl.getUser();
+		if(user.getId()!=bug.getUsers().getId()){
+			Integer count = bug.getCount();
+			if(count == null){
+				bug.setCount(1);
+			}else{
+				bug.setCount(count+1);
+			}
+			bugService.save(bug);
+		}
 		if (user.getBugType() == 0)
 			return "view";
 		else

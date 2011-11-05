@@ -7,7 +7,7 @@
 %>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <s:iterator value="list" id="l">
-	<div class="bugListBanner">
+	<div class="bugListBanner" id="<s:property value="start"/>">
 		<div class="blbt">
 			<a
 				href="<%=basePath%>bug_findById.action?bug.id=<s:property value="id"/>"><s:property

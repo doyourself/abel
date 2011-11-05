@@ -1,10 +1,6 @@
 package com.xx.abel.util;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class PageListData {
 	// 分页结果集

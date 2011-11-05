@@ -20,16 +20,14 @@ public class BugServiceImpl implements BugService {
 	private BugDao bugDao;
 
 	@SuppressWarnings("static-access")
-	public List<Bug> findAll(Integer start,Integer count) {
+	public List<Bug> findAll(Integer start,Integer end) {
 		Users user = UserServiceImpl.getUser();
 		List<Bug> list;
 		if(start==null){
 			list = bugDao.list(UserServiceImpl.getUser().getId());
 		}else{
 			String hql = "from Bug where users.id="+user.getId()+" order by createTime desc";
-			PageListData pd =  bugDao.findList(Bug.class, hql, null, 1, count);
-			list = pd.getDataList();
-//			list = bugDao.list(user.getId(),start,end);
+			list = bugDao.findList(hql, start, end);
 		}
 		if(user.getBugType()==0){
 		List<Bug> l = new LinkedList<Bug>();

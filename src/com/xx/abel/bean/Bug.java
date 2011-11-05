@@ -34,8 +34,17 @@ public class Bug implements java.io.Serializable {
 	private String isAllowedComment;
 	private String isReprinted;
 	private Date createTime;
+	private Integer count;
 
 	// Constructors
+	@Column(name = "count")
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
 
 	/** default constructor */
 	public Bug() {
@@ -71,9 +80,8 @@ public class Bug implements java.io.Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "uid")
+	@JoinColumn(name = "uid",nullable = false)
 	public Users getUsers() {
 		return this.users;
 	}
